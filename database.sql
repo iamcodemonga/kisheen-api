@@ -1,0 +1,43 @@
+CREATE TABLE `users` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `dp` varchar(100) DEFAULT NULL,
+  `firstname` varchar(100) NOT NULL DEFAULT '',
+  `lastname` varchar(100) NOT NULL DEFAULT '',
+  `email` varchar(100) NOT NULL DEFAULT '',
+  `role` varchar(11) NOT NULL DEFAULT '',
+  `country` varchar(100) DEFAULT NULL,
+  `city` varchar(100) DEFAULT NULL,
+  `district` varchar(100) DEFAULT NULL,
+  `gender` varchar(11) DEFAULT NULL,
+  `password` varchar(100) NOT NULL DEFAULT '',
+  `bonuslevel` int(11) DEFAULT 0,
+  `created_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+CREATE TABLE `orders` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `mobile` tinyint(1) DEFAULT NULL,
+  `receipt` varchar(100) NOT NULL,
+  `customer` int(11) NOT NULL,
+  `mealid` int(11) NOT NULL,
+  `photo` varchar(100) DEFAULT NULL,
+  `title` text NOT NULL,
+  `meat` varchar(100) NOT NULL DEFAULT '',
+  `combo` varchar(100) NOT NULL DEFAULT '',
+  `type` varchar(100) NOT NULL DEFAULT '',
+  `method` varchar(11) NOT NULL,
+  `itemcount` int(11) NOT NULL,
+  `quantity` int(11) NOT NULL,
+  `amount` decimal(10,2) NOT NULL,
+  `country` varchar(100) DEFAULT '',
+  `city` varchar(100) DEFAULT '',
+  `district` varchar(100) DEFAULT '',
+  `address` varchar(100) NOT NULL DEFAULT '',
+  `postalcode` varchar(100) DEFAULT '',
+  `tel` varchar(100) NOT NULL DEFAULT '',
+  `prepaid` tinyint(1) NOT NULL,
+  `pending` tinyint(1) NOT NULL,
+  `orderdate` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
